@@ -235,6 +235,6 @@ Error generating stack: `+o.message+`
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: #5736a3; /* or any other color */
+    background-color: #5736a3;
   }
 `,Qm="/twitter_card/assets/Hansel1x-28e2d6b9.png",Ym=()=>sl(Mm,{children:[sl(jm,{children:[ot(Bm,{src:Qm}),ot(Wm,{}),ot(Hm,{}),ot(Vm,{})]}),sl(Dm,{children:[ot(ld,{children:"777 TWEETS"}),ot(Fm,{children:"100,500 FOLLOWERS"}),ot(Um,{children:"FOLLOW"})]})]});function Km(){return ot(Ym,{})}hi.createRoot(document.getElementById("root")).render(ot(dn.StrictMode,{children:sl(zp,{theme:$d,children:[ot(Km,{}),ot(Ap,{})]})}));
