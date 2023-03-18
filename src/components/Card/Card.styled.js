@@ -60,8 +60,7 @@ export const Button = styled.button`
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
 
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     background-color: ${(p) => p.theme.colors.active};
     color: ${(p) => p.theme.colors.black};
   }
