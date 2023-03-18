@@ -118,6 +118,6 @@ export const Ellipse = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: #5736a3; /* or any other color */
+    background-color: #5736a3;
   }
 `;
