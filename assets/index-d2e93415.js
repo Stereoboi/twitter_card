@@ -183,8 +183,7 @@ Error generating stack: `+o.message+`
   transition: background-color 0.2s ease-out, color 0.2s ease-out;
 
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     background-color: ${e=>e.theme.colors.active};
     color: ${e=>e.theme.colors.black};
   }
