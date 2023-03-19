@@ -15,7 +15,7 @@ import {
 
 export const Card = ({ tweets, followers, increaseFollowers }) => {
   const [followed, setFollowed] = useState(
-    localStorage.getItem("FOLLOWED") === "false" ? false : true
+    localStorage.getItem("FOLLOWED") === "true" ? true : false
   );
 
   const formattedNumber = followers.toString().split("");
