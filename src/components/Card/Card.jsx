@@ -52,7 +52,7 @@ export const Card = ({ tweets, followers, increaseFollowers }) => {
           </Button>
         ) : (
           <ButtonUnFollow type="button" onClick={handleClickUnFollow}>
-            FOLLOWED
+            FOLLOWING
           </ButtonUnFollow>
         )}
       </CardInfoWrapper>
