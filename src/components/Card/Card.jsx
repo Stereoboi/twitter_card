@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import {
   CardWrapper,
   CardInfoWrapper,
@@ -6,25 +8,53 @@ import {
   TextFollowers,
   ImageContainer,
   Rectangle1,
-  Rectangle2,
+  ButtonUnFollow,
   Ellipse,
   ImageBoy,
 } from "./Card.styled";
-import boy from "../../media/images/Hansel1x.png";
 
-export const Card = () => {
+export const Card = ({ tweets, followers, increaseFollowers }) => {
+  const [followed, setFollowed] = useState(
+    localStorage.getItem("FOLLOWED") === "false" ? false : true
+  );
+
+  const formattedNumber = followers.toString().split("");
+  formattedNumber.splice(3, 0, ",");
+  const result = formattedNumber.join("");
+
+  useEffect(() => {
+    localStorage.setItem("FOLLOWED", followed);
+  }, [followed]);
+
+  const handleClickFollow = () => {
+    increaseFollowers(Number(followers) + 1);
+    setFollowed(true);
+  };
+
+  const handleClickUnFollow = () => {
+    increaseFollowers(Number(followers) - 1);
+    setFollowed(false);
+  };
+
   return (
     <CardWrapper>
       <ImageContainer>
-        <ImageBoy src={boy} />
+        <ImageBoy />
         <Rectangle1 />
-        <Rectangle2 />
         <Ellipse />
       </ImageContainer>
       <CardInfoWrapper>
-        <Text>777 TWEETS</Text>
-        <TextFollowers>100,500 FOLLOWERS</TextFollowers>
-        <Button>FOLLOW</Button>
+        <Text>{tweets} TWEETS</Text>
+        <TextFollowers>{result} FOLLOWERS</TextFollowers>
+        {!followed ? (
+          <Button type="button" onClick={handleClickFollow}>
+            FOLLOW
+          </Button>
+        ) : (
+          <ButtonUnFollow type="button" onClick={handleClickUnFollow}>
+            FOLLOWED
+          </ButtonUnFollow>
+        )}
       </CardInfoWrapper>
     </CardWrapper>
   );

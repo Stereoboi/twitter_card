@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import logo from "../../media/images/Logo1x.png";
+import logo2x from "../../media/images/Logo2x.png";
 import mainImage from "../../media/images/pic1x.png";
+import mainImage2x from "../../media/images/pic2x.png";
+import boy from "../../media/images/Hansel1x.png";
+import boy2x from "../../media/images/Hansel2x.png";
 
 export const CardWrapper = styled.div`
   position: relative;
@@ -17,6 +21,7 @@ export const CardWrapper = styled.div`
   margin: 0 auto;
   margin-top: 150px;
   border-radius: ${(p) => p.theme.radii.normal};
+  box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
 `;
 // 187.42px 159.48px
 
@@ -24,7 +29,28 @@ export const ImageContainer = styled.div`
   background-image: url(${logo}), url(${mainImage});
   background-position: 20px 20px, 36px 28px;
   background-repeat: no-repeat;
-  height: 284px; ;
+  height: 284px;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${logo2x}), url(${mainImage2x});
+    background-size: 76px 22px, 308px 168px;
+  }
+`;
+export const ImageBoy = styled.div`
+  background-image: url(${boy});
+  position: absolute;
+  top: 187.4px;
+  left: 159.48px;
+  width: 62px;
+  height: 62px;
+  z-index: 2;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${boy2x});
+    background-size: 62px 62px;
+  }
 `;
 export const CardInfoWrapper = styled.div`
   display: flex;
@@ -65,20 +91,14 @@ export const Button = styled.button`
     color: ${(p) => p.theme.colors.black};
   }
 `;
-
-export const ImageBoy = styled.img`
-  position: absolute;
-  top: 187.42px;
-  left: 159.48px;
-  width: 62px;
-  height: 62px;
-  z-index: 50;
+export const ButtonUnFollow = styled(Button)`
+  background-color: ${(p) => p.theme.colors.active};
 `;
 
 export const Rectangle1 = styled.div`
   position: absolute;
   top: 214px;
-  width: 151px;
+  width: 380px;
   height: 8px;
   background-color: ${(p) => p.theme.colors.main};
   box-shadow: inset 0 0 5px rgba(251, 248, 255, 1),
@@ -103,7 +123,7 @@ export const Ellipse = styled.div`
   width: 80px;
   height: 80px;
   background-color: #ebd8ff;
-  border-radius: 50%;
+  border-radius: ${(p) => p.theme.radii.round};
   box-shadow: 0px 4.39px 3.29px 0px rgba(251, 248, 255, 1) inset,
     0px 4.39px 4.39px 0px rgba(0, 0, 0, 0.06),
     0px -2.2px 4.39px 0px #ae7be3 inset;
@@ -113,10 +133,10 @@ export const Ellipse = styled.div`
     width: 62px;
     height: 62px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: ${(p) => p.theme.radii.round};
+    left: ${(p) => p.theme.radii.round};
     transform: translate(-50%, -50%);
-    border-radius: 50%;
+    border-radius: ${(p) => p.theme.radii.round};
     background-color: #5736a3;
   }
 `;
